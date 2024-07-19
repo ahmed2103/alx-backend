@@ -4,8 +4,8 @@ import math
 from typing import List, Dict
 
 
-def index_range(page, page_size):
-    """eturn a tuple of size two containing a start index and end index"""
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """Return a tuple of size two containing a start index and end index"""
     return (page - 1) * page_size, page * page_size
 
 
