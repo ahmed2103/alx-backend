@@ -46,7 +46,7 @@ class Server:
             'page_size': len(data),
             'page': page,
             'data': data,
-            'next_page': page + 1 if end <= length else None,
-            'prev_page': page - 1 if start != 0 else None,
+            'next_page': page + 1 if end < length else None,
+            'prev_page': page - 1 if start > 0 else None,
             'total_pages': math.ceil(length / page_size)
         }

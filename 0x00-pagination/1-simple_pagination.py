@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import csv
-import math
 from typing import List
 
 
@@ -33,6 +32,6 @@ class Server:
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
         start, end = index_range(page, page_size)
-        if start >= len(self.dataset()):
+        if start > len(self.dataset()):
             return list()
         return self.dataset()[start:end].copy()
