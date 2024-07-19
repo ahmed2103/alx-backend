@@ -30,16 +30,13 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Returns a list of `pages` lists"""
-        assert (isinstance(page, int) and isinstance(page_size, int)
-                and page > 0 and page_size > 0)
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
-        self.dataset()
         length = len(self.dataset())
         if start >= length:
             return list()
-        if end > length:
-            end = length
-        return self.dataset()[start:end]
+        return self.dataset()[start:min(end, length)]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """Returns a dictionary of data with hypermedia values"""

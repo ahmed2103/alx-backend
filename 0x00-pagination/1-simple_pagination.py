@@ -12,7 +12,7 @@ def index_range(page, page_size):
 class Server:
     """Server class to paginate a database of popular baby names.
     """
-    DATA_FILE = "Popular_Baby_Names.csv"
+    DATA_FILE = "Popular_Baby_Names.c   sv"
 
     def __init__(self):
         self.__dataset = None
@@ -30,10 +30,9 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Returns a list of `pages` lists"""
-        assert (isinstance(page, int) and isinstance(page_size, int)
-                and page > 0 and page_size > 0)
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
-        self.dataset()
         length = len(self.dataset())
         if start >= length:
             return list()
