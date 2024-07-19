@@ -35,7 +35,7 @@ class Server:
         start, end = index_range(page, page_size)
         if start >= len(self.dataset()):
             return list()
-        return self.dataset()[start, end]
+        return self.dataset()[start:end].copy()
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """Returns a dictionary of data with hypermedia values"""

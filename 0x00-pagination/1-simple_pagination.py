@@ -35,4 +35,4 @@ class Server:
         start, end = index_range(page, page_size)
         if start >= len(self.dataset()):
             return list()
-        return self.dataset()[start:end]
+        return self.dataset()[start:end].copy()
