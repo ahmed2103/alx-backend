@@ -33,10 +33,9 @@ class Server:
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
-        length = len(self.dataset())
-        if start >= length:
+        if start >= len(self.dataset()):
             return list()
-        return self.dataset()[start:min(end, length)]
+        return self.dataset()[start, end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """Returns a dictionary of data with hypermedia values"""
