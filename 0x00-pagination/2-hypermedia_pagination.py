@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+"""method to complete server class with pagination"""
 import csv
 import math
-from typing import List, Dict, Tuple
+from typing import List, Tuple, Dict
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -15,6 +16,8 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """Initializes a new Server instance.
+        """
         self.__dataset = None
 
     def dataset(self) -> List[List]:
