@@ -9,14 +9,14 @@ class FIFOCache(BaseCaching):
     def __init__(self):
         """Initialize some helping types"""
         super().__init__()
-        self.queue = []  # trak insertion order.
+        self.queue = []
 
     def put(self, key, item):
         """Adds item to the dictionary cache if cache not full.
         Otherwise, discards the first"""
         if key and item:
             if key in self.cache_data:
-                self.queue.remove(key)   # this done to save the insertion order.
+                self.queue.remove(key)
             elif len(self.cache_data) >= self.MAX_ITEMS:
                 first = self.queue.pop(0)
                 del self.cache_data[first]

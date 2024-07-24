@@ -8,7 +8,7 @@ class BasicCache(BaseCaching):
     """Caching class that is subclass of BaseCaching"""
     def put(self, key, item):
         """Store item into cache by key"""
-        if key or item:
+        if key and item:
             self.cache_data[key] = item
 
     def get(self, key):
